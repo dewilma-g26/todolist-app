@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container" id="authForm">
+        <div class="form-toggle-buttons">
+            <button id="showLoginBtn" class="active">Login</button>
+            <button id="showRegisterBtn">Daftar</button>
+        </div>
+
+        <div id="loginForm">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button id="loginBtn">Login</button>
+            <p id="loginMessage" class="error-message"></p>
+        </div>
+
+        <div id="registerForm" style="display: none;">
+            <h2>Daftar</h2>
+            <input type="text" id="registerName" placeholder="Nama Lengkap">
+            <input type="text" id="registerUsername" placeholder="Username">
+            <input type="password" id="registerPassword" placeholder="Password">
+            <input type="password" id="registerConfirmPassword" placeholder="Konfirmasi Password">
+            <input type="text" id="registerJob" placeholder="Jabatan (Opsional)">
+            <button id="registerBtn">Daftar</button>
+            <p id="registerMessage" class="error-message"></p>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer" style="display: none;">
+        <div class="header">
+            <div class="profile">
+                <h2 id="userName">Nama User</h2>
+                <p id="userJob">Jabatan</p>
+            </div>
+            <div class="time-info">
+                <h3 id="currentDate"></h3>
+                <p id="currentTime"></p>
+            </div>
+        </div>
+        
+        <button id="logoutBtn">Logout</button>
+        <h1 class="app-title">To-Do List</h1>
+
+        <div class="input-container">
+            <textarea id="taskInput" placeholder="Tulis tugas baru di sini..."></textarea>
+            <div class="input-actions">
+                <select id="priorityLevel">
+                    <option value="Low">Prioritas: Rendah</option>
+                    <option value="Medium" selected>Prioritas: Sedang</option>
+                    <option value="High">Prioritas: Tinggi</option>
+                </select>
+                <input type="date" id="deadlineDate">
+                <button id="addTaskBtn">Tambah</button>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2>To Do</h2>
+            <ul id="taskList"></ul>
+        </div>
+        
+        <div class="task-section">
+            <h2>Overdue</h2>
+            <ul id="overdueList"></ul>
+        </div>
+
+        <div class="task-section">
+            <h2>Done</h2>
+            <ul id="doneList"></ul>
+        </div>
+        
+        <button id="deleteAllBtn">Hapus Semua Daftar</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
